@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Kalkulator</title>
+	<link rel="stylesheet" type="text/css" href="exercise2.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="kal" class="container">
+		<form name="form">
+			<input class="form-control" name="textview">
+			<div class="tombol">
+				<input type="button" class="btn btn-outline-primary" value="1" onclick="insert(1)">
+				<input type="button" class="btn btn-outline-primary" value="2" onclick="insert(2)">
+				<input type="button" class="btn btn-outline-primary" value="3" onclick="insert(3)">
+				<input type="button" class="btn btn-outline-primary" value="4" onclick="insert(4)">
+				<input type="button" class="btn btn-outline-primary" value="5" onclick="insert(5)">
+				<input type="button" class="btn btn-outline-primary" value="6" onclick="insert(6)">
+				<input type="button" class="btn btn-outline-primary" value="7" onclick="insert(7)">
+				<input type="button" class="btn btn-outline-primary" value="8" onclick="insert(8)">
+				<input type="button" class="btn btn-outline-primary" value="9" onclick="insert(9)">
+				<input type="button" class="btn btn-outline-primary" value="0" onclick="insert(0)">
+			</div>
+			<div class="tombol2">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="+" onclick="insert('+')">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="-" onclick="insert('-')">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="x" onclick="insert('*')">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="/" onclick="insert('/')">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="." onclick="insert('.')">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="=" onclick="equal()">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="<" onclick="back()">
+				<input type="button" class="btn btn-outline-primary btn-lg" value="C" onclick="clean()">
+			</div>
+		</form>
+
+	</div>
+<script type="text/javascript">
+	function insert(num){
+		document.form.textview.value = document.form.textview.value+num
+	}
+	function equal(){
+		var exp = document.form.textview.value
+		if(exp){
+			document.form.textview.value = eval(exp)
+		}
+	}
+	function clean(){
+		document.form.textview.value = "";
+	}
+	function back(){
+		var exp = document.form.textview.value
+		document.form.textview.value = exp.substring(0, exp.length-1);
+	}
+</script>
+</body>
+</html>
